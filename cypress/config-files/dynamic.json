@@ -1,0 +1,55 @@
+{
+    "env": {
+        "Url": "https://login.learnship.today/",
+        "cookies": "dynamicIdToken",
+        "cookie1": "learnerToken",
+        "tmsUrl": "https://qa06-tms.learnship.today",
+        "tms": {
+            "forgotPassword": "Password"
+        },
+        "login": {
+            "logoutUrl": "https://login.learnship.today/logout",
+            "edgeUrl": "https://edge.learnship.today/",
+            "coachUrl": "https://coach.learnship.today/",
+            "stepUrl": "https://step.learnship.today/assessment/#/home",
+            "haloUrl": "https://halo.learnship.today/",
+            "sprintSkillsUrl": "https://sprint.learnship.today/businessskills"
+        },
+        "SprintBE": {
+            "username": "sprintBE101",
+            "password": "Welcome@1"
+        },
+        "Elevate": {
+            "username": "18elevatejuly01",
+            "password": "Welcome@1"
+        },
+        "dashboardUrl": "https://dashboard.learnship.today/",
+        "Dashboard": {
+            "username": "jananisysadmin",
+            "password": "Janani123@"
+        },
+        "webshopUrl": "https://integration-5ojmyuq-gtjdtisqbqwr4.eu-5.magentosite.cloud/l/en-us/",
+        "GenericshopNewUser": {
+            "emailId": "genshopintegtest@yopmail.com",
+            "password": "Newuser@123"
+        },
+        "GenericshopExistingUser": {
+            "emailId": "carayauttoquo-2576@yopmail.com",
+            "password": "Welcome@123"
+        },
+        "help": {
+            "FAQ": "https://support.learnship.today/en-en",
+            "CustomerSupport": "https://support.learnship.today/en-en/contact_support"
+        },
+        "footer": {
+            "About": "https://www.learnship.com/en/about-learnship/",
+            "Legal": "https://www.learnship.com/us/legal-notice/",
+            "PrivacyPolicy": "https://www.learnship.com/us/privacy-notice/",
+            "TermsNCondition": "https://www.learnship.com/us/general-terms-and-conditions/"
+        },
+        "newsFeed": "https://newsfeed.learnship.tech/learner",
+        "reviewModeURL": "https://classroom-frontend.learnship.today/v2/classroom/qa01/index?id=f9b77043117ebef5fe4a0052b5d9fec5",
+        "liveSessionURL": "https://classroom-frontend.learnship.today/v2/classroom/qa01/index?id=d11b2af17b116adcae385e6b41ad9247",
+        "homeworkModeURL": "https://classroom-frontend.learnship.today/v2/classroom/qa01/index?id=d0d7460e315820ee7f19e0b153fc8904"
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "smokesuite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/cypress run",
+    "dymanic-smoke": "npx cypress run --browser chrome --env fileConfig=dynamic",
+    "staging-smoke": "npx cypress run --browser chrome --env fileConfig=staging",
+    "production-smoke": "npx cypress run --browser chrome --env fileConfig=production",
+    "report": "node cypress/cucumber-html-report.js"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/integration",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumberreport",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "author": "Janani Manoharan",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^1.18.0"
+  }
+}

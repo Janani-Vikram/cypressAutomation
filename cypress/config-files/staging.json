@@ -1,0 +1,68 @@
+{
+    "env": {
+        "Url": "https://login.learnship.tech/",
+        "cookies": "stagingIdToken",
+        "cookie1": "learnerToken",
+        "tmsUrl": "https://tms.learnship.tech",
+        "tms": {
+            "forgotPassword": "Password"
+        },
+        "login": {
+            "logoutUrl": "https://login.learnship.tech/logout",
+            "edgeUrl": "https://edge.learnship.tech/",
+            "coachUrl": "https://coach.learnship.tech/",
+            "stepUrl": "https://step.learnship.tech/assessment/#/home",
+            "haloUrl": "https://halo.learnship.tech/",
+            "sprintSkillsUrl": "https://sprint.learnship.tech/businessskills"
+        },
+        "SprintBE": {
+            "username": "11SprintBE09",
+            "password": "Welcome@1"
+        },
+        "Elevate": {
+            "username": "18elevate202201",
+            "password": "Welcome@2"
+        },
+        "dashboardUrl": "https://dashboard.learnship.tech/",
+        "Dashboard": {
+            "username": "sysadmin",
+            "password": "Review123"
+        },
+        "webshopUrl": "https://shop.learnship.tech/l/en-us/",
+        "GenericshopNewUser": {
+            "emailId": "testsmokesuite2411@mailinator.com",
+            "password": "Newuser@1"
+        },
+        "GenericshopExistingUser": {
+            "emailId": "makallounneubeu-5279@mailinator.com",
+            "password": "Newuser@1"
+        },
+        "NewsFeed": {
+            "Url": "https://newsfeed.learnship.tech/",
+            "logoutUrl": "https://newsfeed.learnship.tech/logout",
+            "User_credentials": {
+                "Username": "SprintSkills2001",
+                "Password": "Welcome!1"
+            },
+            "Logos": {
+                "footerlogo": "https://www.learnship.tech/en/",
+                "headerlogo": "https://newsfeed.learnship.tech/learnshipLogo.svg",
+                "Preference": "/preferences"
+            }
+        },
+        "help": {
+            "FAQ": "https://support.learnship.tech/en-en",
+            "CustomerSupport": "https://support.learnship.tech/en-en/contact_support"
+        },
+        "footer": {
+            "About": "https://www.learnship.com/en/about-learnship/",
+            "Legal": "https://www.learnship.com/us/legal-notice/",
+            "PrivacyPolicy": "https://www.learnship.com/us/privacy-notice/",
+            "TermsNCondition": "https://www.learnship.com/us/general-terms-and-conditions/"
+        },
+        "newsFeed": "https://newsfeed.learnship.tech/learner",
+        "reviewModeURL": "https://classroom-frontend.learnship.tech/v2/classroom/staging/index?id=41713c0c3b6784b41938843afb968495",
+        "liveSessionURL": "https://classroom-frontend.learnship.tech/v2/classroom/staging/index?id=6567a9288d3da7384b877b705cbe8db7",
+        "homeworkModeURL": "https://classroom-frontend.learnship.tech/v2/classroom/staging/index?id=eba33707fa4e1535a570a54a5ce6ff72"
+    }
+}
