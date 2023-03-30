@@ -84,7 +84,7 @@ When('Feature dropdown is clicked', () => {
 })
 
 Then('Check the Cultural Center page', () => {
-    cy.get('.dropdown-item').contains(halo.features.culturalTitle).click()
+    cy.get('.dropdown-item').find('a').contains(halo.features.culturalTitle).click()
     cy.url().should('include', '/culturecenter')
 })
 
