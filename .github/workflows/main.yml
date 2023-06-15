@@ -6,7 +6,9 @@ on:
       - main
 
 jobs:
-  cypress:
+
+  cypress-parallel-run-one:
+    name: Cypress Parallel New Users
     runs-on: ubuntu-latest
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -21,4 +23,23 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
+          npx cypress-tags run --browser chrome -e TAGS=\"@parallel1\" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
+
+  cypress-parallel-run-two:
+    name: Cypress Parallel latest Users
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      CYPRESS_GROUP_NAME: ${{ secrets.CYPRESS_GROUP_NAME }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Dependencies
+        run: npm install
+      - name: Cypress Run
+        run: |
+          npx cypress-tags run --browser chrome -e TAGS=\"@parallel2\" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
+

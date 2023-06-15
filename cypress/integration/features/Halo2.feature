@@ -1,4 +1,4 @@
-@parallel1
+@parallel2
 Feature: Halo Smoke suite
 
     Halo Home page testing

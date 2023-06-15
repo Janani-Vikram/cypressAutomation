@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/cypress run",
-    "dymanic-smoke": "npx cypress run --browser chrome --env fileConfig=dynamic",
+    "cypress-parallel1": "npx cypress-tags run --browser chrome -e TAGS=\"@parallel1\" --env fileConfig=dynamic",
+    "cypress-parallel2": "npx cypress-tags run --browser chrome -e TAGS=\"@parallel2\" --env fileConfig=dynamic",
     "staging-smoke": "npx cypress run --browser chrome --env fileConfig=staging",
     "production-smoke": "npx cypress run --browser chrome --env fileConfig=production",
     "report": "node cypress/cucumber-html-report.js"
