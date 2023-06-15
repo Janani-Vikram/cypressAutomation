@@ -6,7 +6,7 @@ module.exports = defineConfig({
   defaultCommandTimeout: 30000,
   pageLoadTimeout: 70000,
   ignoreTestFile: ["*.js", "*.md"],
-  projectId: "5eprjs",
+  projectId: "vh1msn",
   retries: {
     runMode: 0,
     openMode: 0,

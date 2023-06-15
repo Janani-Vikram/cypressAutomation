@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      CYPRESS_GROUP_NAME: ${{ secrets.CYPRESS_GROUP_NAME }}
     steps:
       - uses: actions/checkout@v2
       - name: Setup Node.js
@@ -20,4 +21,4 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY
+          npx cypress run --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
