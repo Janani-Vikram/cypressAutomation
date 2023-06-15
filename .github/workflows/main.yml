@@ -23,7 +23,7 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress-tags run --browser chrome -e TAGS=\"@parallel1\" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
+          npx cypress-tags run --browser chrome -e TAGS="@parallel1" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
 
   cypress-parallel-run-two:
     name: Cypress Parallel latest Users
@@ -41,5 +41,5 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress-tags run --browser chrome -e TAGS=\"@parallel2\" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
+          npx cypress-tags run --browser chrome -e TAGS="@parallel2" --record --key $CYPRESS_RECORD_KEY --group $CYPRESS_GROUP_NAME
 
