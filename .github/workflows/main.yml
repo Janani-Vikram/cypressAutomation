@@ -7,7 +7,7 @@ on:
 
 jobs:
   cypress:
-    name: Cypress Parallel New Users
+    name: Cypress Parallelization
     runs-on: ubuntu-latest
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
@@ -26,5 +26,5 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel
+          npx cypress run --record --key $CYPRESS_RECORD_KEY
     

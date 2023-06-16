@@ -19,7 +19,5 @@ module.exports = defineConfig({
     },
     specPattern: ["**/*.feature"],
     testIsolation: false,
-    numTestsKeptInMemory: 3,
-    parallel: 3
   },
 });
