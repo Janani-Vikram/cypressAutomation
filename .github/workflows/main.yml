@@ -18,8 +18,8 @@ jobs:
         containers: [ 0, 1, 2, 3]
     steps:
       - uses: actions/checkout@v2
-        with:  
-          group: "Cypress Test"
+        # with:  
+        #   group: "Cypress Test"
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -28,5 +28,5 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel
+          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel --group cypress-test
     
