@@ -15,57 +15,12 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
       
-            - name: Cypress install
-              uses: cypress-io/github-action@v5
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
               with:
-                runTests: false
-            # report machine parameters
-            - run: yarn cypress info
-            - run: node --version
-            - run: node -p 'os.cpus()'
-            - run: yarn types
-            - run: yarn lint
-            - run: yarn test:unit:ci
-            - run: yarn build:ci
-      
-            - name: Save build folder
-              uses: actions/upload-artifact@v3
-              with:
-                name: build
-                if-no-files-found: error
-                path: build
-      
-        install-windows:
-          runs-on: windows-2022
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            - uses: actions/setup-node@v3
-              with:
-                # The default install for the job is node 18+
-                # which has some compatibility issues with openSSL inside this windows job.
-                # Node 18 updated with OpenSSL provider which causes this compatibility issue
-                # downgrading node to v16 to use the openssl-legacy-provider by default to prevent this issue
-                node-version: '16.16.0'
-      
-            - name: Cypress install
-              uses: cypress-io/github-action@v5
-              with:
-                runTests: false
-            # report machine parameters
-            - run: yarn cypress info
-            - run: node -p 'os.cpus()'
-            - run: yarn types
-            - run: yarn lint
-            - run: yarn test:unit:ci
-            - run: yarn build:ci
-      
-            - name: Save build folder
-              uses: actions/upload-artifact@v3
-              with:
-                name: build
-                if-no-files-found: error
-                path: build
+                node-version: '14'
+            - name: Install Dependencies
+              run: npm install
       
         ui-chrome-tests:
           timeout-minutes: 15
@@ -94,13 +49,7 @@ jobs:
                 path: build
       
             - name: Cypress info
-              run: npx cypress info
-      
-            - name: Node info
-              run: node -v
-      
-            - name: __e Dir
-              run: ls /__e
+              run: npx cypress run
       
             - name: "UI Tests - Chrome"
               uses: cypress-io/github-action@v5
