@@ -6,63 +6,25 @@ on:
       - main
 
 jobs:
-        install:
-          runs-on: ubuntu-latest
-          container:
-            image: cypress/browsers:node16.16.0-chrome105-ff104-edge
-            options: --user 1001
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-      
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                node-version: '14'
-            - name: Install Dependencies
-              run: npm install
-      
-        ui-chrome-tests:
-          timeout-minutes: 15
-          runs-on: ubuntu-latest
-          container:
-            image: cypress/browsers:node16.16.0-chrome105-ff104-edge
-            options: --user 1001
-          needs: install
-          strategy:
-            # when one test fails, DO NOT cancel the other
-            # containers, because this will kill Cypress processes
-            # leaving Cypress Cloud hanging ...
-            # https://github.com/cypress-io/github-action/issues/48
-            fail-fast: false
-            matrix:
-              # run copies of the current job in parallel
-              containers: [1, 2, 3, 4, 5]
-          steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-      
-            - name: Download the build folders
-              uses: actions/download-artifact@v3
-              with:
-                name: build
-                path: build
-      
-            - name: Cypress info
-              run: npx cypress run
-      
-            - name: "UI Tests - Chrome"
-              uses: cypress-io/github-action@v5
-              with:
-                start: yarn start:ci
-                wait-on: "http://localhost:3000"
-                wait-on-timeout: 120
-                browser: chrome
-                record: true
-                parallel: true
-                group: "UI - Chrome"
-                spec: cypress/integration/*
-                config-file: cypress.config.js
-              env:
-                CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  cypress:
+    name: Cypress Parallel New Users
+    runs-on: ubuntu-latest
+    env:
+      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 0, 1, 2, 3, 4 ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install Dependencies
+        run: npm install
+      - name: Cypress Run
+        run: |
+          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel
     
