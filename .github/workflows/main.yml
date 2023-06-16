@@ -26,5 +26,5 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY
+          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel
     
