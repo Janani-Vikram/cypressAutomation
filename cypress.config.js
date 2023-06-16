@@ -19,5 +19,6 @@ module.exports = defineConfig({
     },
     specPattern: ["**/*.feature"],
     testIsolation: false,
+    parallel: 6
   },
 });
