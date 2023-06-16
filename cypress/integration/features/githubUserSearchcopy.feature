@@ -1,6 +1,6 @@
 Feature: github user search Parallelization using Cypress
 
-    Scenario: Login as a user
+    Scenario: Search a user in gitHub
         Given Open the browser and launch the Application
-        When User enters Valid credentials
-        Then validate if the user login is successful
+        When a user is searched 
+        Then validate the user card

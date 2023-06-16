@@ -13,13 +13,13 @@ Given('Open the browser and launch the Application', function () {
     cy.visit(env.githubUrl)
 })
 
-When('User enters Valid credentials', function () {
-    cy.get('input[name="search"]').type(swag.githubUsername);
+When('a user is searched', function () {
+    cy.get('[data-testid="search-bar"]').type(swag.githubUsername);
     cy.get('button[type="submit"]').click();
 })
 
-Then('validate if the user login is successful', function () {
-    cy.get('.user-card').should('have.length', 1);
-    cy.get('.user-card').should('contain', swag.githubUsername);
+Then('validate the user card', function () {
+    cy.get('header > div > h4').should('have.length', 1);
+    cy.get('header > div > h4').should('contain', swag.githubUsername);
 })
 
