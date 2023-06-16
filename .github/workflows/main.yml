@@ -16,10 +16,9 @@ jobs:
       fail-fast: false
       matrix:
         containers: [ 1, 2, 3 ]
+
     steps:
       - uses: actions/checkout@v2
-        # with:  
-        #   group: "Cypress Test"
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
