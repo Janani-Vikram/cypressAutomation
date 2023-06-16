@@ -11,12 +11,15 @@ module.exports = defineConfig({
     runMode: 0,
     openMode: 0,
   },
+
   e2e: {
     setupNodeEvents(on, config) {
       return require("./cypress/plugins/index.js")(on, config);
       // implement node event listeners here
     },
     specPattern: ["**/*.feature"],
-    testIsolation: false
+    testIsolation: false,
+    numTestsKeptInMemory: 3,
+    parallel: 3
   },
 });

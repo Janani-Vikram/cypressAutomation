@@ -1,67 +1,6 @@
 {
     "env": {
-        "Url": "https://login.learnship.com/",
-        "tmsUrl": "https://tms.learnship.com",
-        "tms": {
-            "forgotPassword": "password"
-        },
-        "cookies": "productionIdToken",
-        "login": {
-            "logoutUrl": "https://login.learnship.com/logout",
-            "edgeUrl": "https://edge.learnship.com/",
-            "coachUrl": "https://coach.learnship.com/",
-            "stepUrl": "https://step.learnship.com/assessment/#/home",
-            "haloUrl": "https://halo.learnship.com/",
-            "sprintSkillsUrl": "https://sprint.learnship.com/businessskills"
-        },
-        "SprintBE": {
-            "username": "lplevel011",
-            "password": "Welcome@2"
-        },
-        "Elevate": {
-            "username": "36elevate10",
-            "password": "Welcome@2"
-        },
-        "dashboardUrl": "https://dashboard.learnship.com/",
-        "Dashboard": {
-            "username": "testsysadmin",
-            "password": "Welcome@123"
-        },
-        "webshopUrl": "https://shop.learnship.com/l/en-us/",
-        "GenericshopNewUser": {
-            "emailId": "genshoptesting@yopmail.com",
-            "password": "Newuser@123"
-        },
-        "GenericshopExistingUser": {
-            "emailId": "satprodtesting044@yopmail.com",
-            "password": "Newuser@1"
-        },
-        "NewsFeed": {
-            "Url": "https://newsfeed.learnship.com/",
-            "logoutUrl": "https://newsfeed.learnship.com/logout",
-            "User_credentials": {
-                "Username": "sologerman55",
-                "Password": "Welcome@1"
-            },
-            "Logos": {
-                "footerlogo": "https://www.learnship.com/en/",
-                "headerlogo": "https://newsfeed.learnship.com/learnshipLogo.svg",
-                "Preference": "/preferences"
-            }
-        },
-        "help": {
-            "FAQ": "https://support.learnship.com/en-en",
-            "CustomerSupport": "https://support.learnship.com/en-en/contact_support"
-        },
-        "footer": {
-            "About": "https://www.learnship.com/en/about-learnship/",
-            "Legal": "https://www.learnship.com/us/legal-notice/",
-            "PrivacyPolicy": "https://www.learnship.com/us/privacy-notice/",
-            "TermsNCondition": "https://www.learnship.com/us/general-terms-and-conditions/"
-        },
-        "newsFeed": "https://newsfeed.learnship.com/learner",
-        "reviewModeURL": "https://classroom-frontend.learnship.com/v2/classroom/v2.47.0/index?id=7f05adc254b84d1108642e8263d52846",
-        "liveSessionURL": "https://classroom-frontend.learnship.com/v2/classroom/v2.47.0/index?id=51335cd945fdbfc67e6d85a07d23b638",
-        "homeworkModeURL": "https://classroom-frontend.learnship.com/v2/classroom/v2.47.0/index?id=6d28f873536fdad6f25c69d82bd235b8"
+        "Url": "https://www.saucedemo.com/",
+        "githubUrl": "https://gh-users-search.netlify.app/"
     }
 }

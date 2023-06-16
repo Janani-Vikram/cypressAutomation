@@ -69,7 +69,7 @@ module.exports = (on, config) => {
 
   //environment variables
 
-  const file = config.env.fileConfig || 'dynamic';
+  const file = config.env.fileConfig || 'production';
 
   return getConfigurationByFile(file);
 
