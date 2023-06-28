@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: '14'
       - name : Set Cypress Record Env variables from github secrets
-        working-directory: ./cypressAutomation
         run: |
           sed -i "s|XXXCYPRESS_RECORD_KEYXXX|${{secrets.CYPRESS_RECORD_KEY}}|g" ".env_cypress"
           cat ".env_cypress"  
