@@ -26,7 +26,7 @@ jobs:
       - name : Set Cypress Record Env variables from github secrets
         working-directory: ./test
         run: |
-          sed -i "s|XXXCYPRESS_RECORD_KEYXXX|${{secrets.CYPRESS_RECORD_KEY}}|g" ".env.cypress"
+          sed -i "s|XXXCYPRESS_RECORD_KEYXXX|${{secrets.CYPRESS_RECORD_KEY}}|g" ".env_cypress"
           cat ".env_cypress"  
       - name: Install Dependencies
         run: npm install
