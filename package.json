@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/.bin/cypress run",
     "staging": "npx cypress run --browser chrome --env fileConfig=staging",
-    "production": "npx cypress-tags run --browser chrome --env fileConfig=staging -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\"",
+    "production": "npx cypress-tags run --browser chrome --env fileConfig=staging -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\" --parallel --group test",
     "report": "node cypress/cucumber-html-report.js"
   },
   "cypress-cucumber-preprocessor": {
@@ -22,7 +22,7 @@
   "author": "Janani Manoharan",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.14.0",
+    "cypress": "^12.16.0",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^1.18.0"
