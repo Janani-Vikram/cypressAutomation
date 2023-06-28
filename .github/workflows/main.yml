@@ -27,5 +27,4 @@ jobs:
         run: npm install
       - name: Cypress Run
         run: |
-          npx cypress run --record --key $CYPRESS_RECORD_KEY --parallel --group cypress-test
-    
+          npx cypress-tags run --browser chrome -e TAGS=\"@sanity\" --env fileConfig=production --record --key $CYPRESS_RECORD_KEY --parallel --group cypress-test    

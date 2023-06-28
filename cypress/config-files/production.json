@@ -1,6 +1,6 @@
 {
     "env": {
-        "Url": "https://www.saucedemo.com/",
+        "sauceUrl": "https://www.saucedemo.com/",
         "githubUrl": "https://gh-users-search.netlify.app/"
     }
 }

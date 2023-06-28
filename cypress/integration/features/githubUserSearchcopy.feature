@@ -1,3 +1,4 @@
+@regression
 Feature: github user search Parallelization using Cypress
 
     Scenario: Search a user in gitHub

@@ -1,5 +1,9 @@
 {
-    "uname": "standard_user",
-    "password": "secret_sauce",
-    "githubUsername":"Octocat"
+    "swag": {
+        "uname": "standard_user",
+        "password": "secret_sauce"
+    },
+    "gitHub": {
+        "uname": "Octocat"
+    }
 }

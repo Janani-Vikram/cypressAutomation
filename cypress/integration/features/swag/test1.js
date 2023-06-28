@@ -2,23 +2,22 @@ import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 
 const env = Cypress.env()
 
-let swag
+let test
 before(function () {
     cy.fixture('test').then(function (data) {
-        swag = data;
+        test = data;
     })
 })
 
-Given('Open the browser and launch the Application', function () {
-    cy.visit(env.Url)
+Given('the user hits the URL in the browser', function () {
+    cy.visit(env.sauceUrl)
 })
 
-When('User enters Valid credentials', function () {
-    cy.login(swag.uname, swag.password)
+When('the user enters valid credentials and clicks the login button', function () {
+    cy.login(test.swag.uname, test.swag.password)
 })
 
-Then('validate if the user login is successful', function () {
+Then('the user should land on the home page', function () {
     cy.url().should('include', '/inventory.html');
     cy.get('.title').should('contain', 'Products');
 })
-
