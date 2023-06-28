@@ -1,4 +1,4 @@
-@sanity @regression
+@sanity
 Feature: Swagdemo Parallelization using Cypress
 
     Scenario: Login as a user

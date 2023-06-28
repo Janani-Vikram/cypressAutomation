@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/.bin/cypress run",
     "staging": "npx cypress run --browser chrome --env fileConfig=staging",
-    "production": "npx cypress run --browser chrome --env fileConfig=production",
+    "production": "npx cypress-tags run --browser chrome --env fileConfig=staging -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\"",
     "report": "node cypress/cucumber-html-report.js"
   },
   "cypress-cucumber-preprocessor": {
