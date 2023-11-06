@@ -9,6 +9,10 @@
     "production": "npx cypress-tags run --browser chrome --env fileConfig=staging -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\" --parallel --group test",
     "report": "node cypress/cucumber-html-report.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Janani-Vikram/cypressAutomation.git"
+},
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": "cypress/integration",
@@ -22,9 +26,12 @@
   "author": "Janani Manoharan",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.16.0",
+    "cypress": "^13.3.3",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^1.18.0"
+  },
+  "dependencies": {
+    "@percy/cypress": "^3.1.2"
   }
 }

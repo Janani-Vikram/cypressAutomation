@@ -18,6 +18,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: ["**/*.feature"],
-    testIsolation: false,
+    testIsolation: false
   },
 });
