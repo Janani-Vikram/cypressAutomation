@@ -16,21 +16,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [ 1, 2, 3 ]
+        containers: [1, 2, 3]
 
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
-      - name : Set Cypress Record Env variables from github secrets
+          node-version: "14"
+      - name: Set Cypress Record Env variables from github secrets
         run: |
           sed -i "s|XXXCYPRESS_RECORD_KEYXXX|${{secrets.CYPRESS_RECORD_KEY}}|g" ".env_cypress"
-          cat ".env_cypress"  
+          cat ".env_cypress"
       - name: Install Dependencies
         run: npm install
-        run: npm install --save-dev @percy/cli
       - name: Cypress Run
         run: |
           npm run percy_run
