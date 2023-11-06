@@ -21,3 +21,9 @@ Then('the user should land on the home page', function () {
     cy.url().should('include', '/inventory.html');
     cy.get('.title').should('contain', 'Products');
 })
+
+And('filter the products based on the user selection',()=>{
+    cy.percySnapshot('A-Z filter')
+    cy.get('select').select('za')
+    cy.percySnapshot('Z-A filter')
+})

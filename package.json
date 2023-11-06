@@ -6,13 +6,14 @@
   "scripts": {
     "test": "node_modules/.bin/cypress run",
     "staging": "npx cypress run --browser chrome --env fileConfig=staging",
-    "production": "npx cypress-tags run --browser chrome --env fileConfig=staging -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\" --parallel --group test",
-    "report": "node cypress/cucumber-html-report.js"
+    "production": "npx cypress-tags run --browser chrome --env fileConfig=production -e TAGS=\"@sanity\" --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\" --parallel --group test",
+    "report": "node cypress/cucumber-html-report.js",
+    "percy_run": "npx percy exec -- cypress run --browser chrome --record --key=\"$(grep '^REACT_APP_CYPRESS_RECORD_KEY=' .env_cypress | cut -d= -f2)\" --parallel --group test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Janani-Vikram/cypressAutomation.git"
-},
+  },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": "cypress/integration",
@@ -26,12 +27,11 @@
   "author": "Janani Manoharan",
   "license": "ISC",
   "devDependencies": {
+    "@percy/cli": "^1.27.4",
+    "@percy/cypress": "^3.1.2",
     "cypress": "^13.3.3",
     "cypress-cucumber-preprocessor": "^4.3.0",
     "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^1.18.0"
-  },
-  "dependencies": {
-    "@percy/cypress": "^3.1.2"
   }
 }

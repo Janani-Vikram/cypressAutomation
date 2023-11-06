@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
     strategy:
       fail-fast: false
@@ -18,9 +19,9 @@ jobs:
         containers: [ 1, 2, 3 ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name : Set Cypress Record Env variables from github secrets
@@ -29,6 +30,7 @@ jobs:
           cat ".env_cypress"  
       - name: Install Dependencies
         run: npm install
+        run: npm install --save-dev @percy/cli
       - name: Cypress Run
         run: |
-          npm run production
+          npm run percy_run
